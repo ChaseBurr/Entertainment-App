@@ -1,0 +1,50 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
+/* Page Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+/* Variables */
+:root {
+  --primary-color: #6c5ce7;
+  --secondary-color: #a29bfe;
+}
+
+/* HTML Tag Styling */
+body {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+header {
+  height: 75px;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  background-color: var(--primary-color);
+}
+
+header form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* Classes */
+
+.movie-search {
+  width: 300px;
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  /* align-self: flex-end; */
+  background-color: var(--secondary-color);
+}
+
+/* IDs */
