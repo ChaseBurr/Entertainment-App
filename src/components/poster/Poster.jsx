@@ -12,6 +12,7 @@ function Poster({ title, poster, overview, adult, release_date }) {
         />
       </div>
       <div className="poster-data">
+        <div className="poster-data-background"></div>
         <h1 className="poster-title">{title}</h1>
         <h3 className="poster-description">{overview}</h3>
       </div>

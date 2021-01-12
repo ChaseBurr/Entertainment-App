@@ -1,35 +1,21 @@
 import "./App.css";
-import DisplayMovieData from "./components/DisplayMovieData";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+// Pages
+import Home from "./Pages/Home";
+import Movies from "./Pages/Movies";
+import MoviePage from "./Pages/MoviePage";
+import NotFound from "./Pages/NotFound";
 
 function App() {
-  const [movieData, setMovieData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    let search = "Iron man";
-    let API_KEY = "c52a1f0a294a2c11d901d69ed73d1290";
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${search}&page=1&include_adult=false`;
-
-    axios
-      .get(url)
-      .then((res) => {
-        console.log(res.data);
-        setMovieData(res.data.results);
-      })
-      .catch((error) => console.log(error));
-    setLoading(false);
-  }, []);
-
   return (
     <div className="App">
       <header>
         <form id="form" method="GET">
           <h1>Movie Search</h1>
           <input
-            placeholder="Search..."
+            placeholder="Iron Man..."
             type="text"
             name="search"
             className="movie-search form-control"
@@ -37,7 +23,15 @@ function App() {
           <input type="submit" value="Search" />
         </form>
       </header>
-      <DisplayMovieData movieData={movieData} />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/movies" component={Movies} />
+          <Route exact path="/movies/:title" component={MoviePage} />
+          {/* Needs to be at bottom */}
+          <Route path="*" component={NotFound} />
+        </Switch>
+      </Router>
     </div>
   );
 }
