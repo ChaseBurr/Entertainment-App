@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+const imgUrl = "https://image.tmdb.org/t/p/original";
+
 function MoviePage({ match }) {
   const [movieData, setMovieData] = useState();
 
@@ -24,7 +26,7 @@ function MoviePage({ match }) {
             {movieData.backdrop_path ? (
               <>
                 <img
-                  src={`https://image.tmdb.org/t/p/original${movieData.backdrop_path}`}
+                  src={`${imgUrl}${movieData.backdrop_path}`}
                   alt={movieData.title}
                   className="poster-img"
                 />
@@ -35,9 +37,21 @@ function MoviePage({ match }) {
             <div className="backdrop-overlay"></div>
           </div>
           <div className="movie-page-data container">
-            <h1>
-              Movie Title: {movieData ? movieData.title : "Loading Title"}
-            </h1>
+            <img
+              className="movie-page-poster"
+              src={`${imgUrl}${movieData.poster_path}`}
+              alt={movieData.title}
+            />
+            <div className="movie-page-content">
+              <h1 className="movie-page-title">
+                {movieData ? movieData.title : "Loading Title"}
+              </h1>
+              <hr />
+              <div className="movie-page-overview">
+                <h2>Overview</h2>
+                <p>{movieData.overview}</p>
+              </div>
+            </div>
           </div>
         </>
       ) : (

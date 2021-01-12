@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Poster from "./poster/Poster";
 import { Link } from "react-router-dom";
-import { getData, getPopular } from "./../components/FetchData";
 
-function DisplayMovieData() {
-  const [movieData, setMovieData] = useState([]);
-  useEffect(() => {
-    async function fetchData() {
-      setMovieData(
-        await getPopular().then((response) => response.data.results)
-      );
-    }
-    fetchData();
-    console.log(movieData);
-  }, []);
-
+function DisplayMovieData({ data }) {
   return (
     <div className="posters">
-      {movieData ? (
+      {data ? (
         <ul className="movie-list">
-          {movieData.map((movie) => {
+          {data.map((movie) => {
             if (movie.poster_path)
               return (
                 <Link
