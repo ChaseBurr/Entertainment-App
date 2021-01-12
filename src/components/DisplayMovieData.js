@@ -13,8 +13,8 @@ function DisplayMovieData({ movieData }) {
                 <Link
                   className="poster"
                   to={{
-                    pathname: `/movies/${movie.title}`,
-                    state: movie,
+                    pathname: `/movies/${movie.id}`,
+                    state: movie.id,
                   }}
                 >
                   <Poster
