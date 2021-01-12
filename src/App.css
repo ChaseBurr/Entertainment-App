@@ -9,7 +9,7 @@
   font-family: "Roboto Condensed", sans-serif;
 }
 
-/* Variables */
+/* Global Variables */
 :root {
   --primary-color: #6c5ce7;
   --secondary-color: #a29bfe;
@@ -22,7 +22,7 @@ body {
 }
 
 header {
-  height: 75px;
+  height: 80px;
   padding: 20px;
   width: 100%;
   position: relative;
@@ -30,6 +30,8 @@ header {
 }
 
 header form {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -43,8 +45,28 @@ header form {
   border-radius: 50px;
   border: none;
   color: white;
-  /* align-self: flex-end; */
   background-color: var(--secondary-color);
 }
 
-/* IDs */
+.movie-search::placeholder {
+  color: white;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 300px;
+  font-size: 3rem;
+}
+
+.posters {
+  padding: 30px 50px;
+  width: 100vw;
+}
+
+.movie-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
