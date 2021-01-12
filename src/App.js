@@ -11,18 +11,24 @@ import NotFound from "./Pages/NotFound";
 function App() {
   return (
     <div className="App">
-      <header>
-        <form id="form" method="GET">
-          <h1>Movie Search</h1>
-          <input
-            placeholder="Iron Man..."
-            type="text"
-            name="search"
-            className="movie-search form-control"
-          />
-          <input type="submit" value="Search" />
-        </form>
-      </header>
+      <nav>
+        <div className="navbar container">
+          <div className="logo">
+            <a href="/">ENTERTAINMENT FINDER</a>
+          </div>
+          <form id="form" method="GET">
+            <input
+              placeholder="Iron Man..."
+              type="text"
+              name="search"
+              className="movie-search form-control"
+            />
+            <button className="btn" type="submit">
+              <i className="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+      </nav>
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />

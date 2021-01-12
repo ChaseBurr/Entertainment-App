@@ -11,33 +11,60 @@
 
 /* Global Variables */
 :root {
-  --primary-color: #6c5ce7;
-  --secondary-color: #a29bfe;
+  --primary-color: #2980d9;
+  --secondary-color: white;
 }
 
 /* HTML Tag Styling */
-body {
-  background-color: var(--secondary-color);
-  color: white;
-}
 
-header {
-  height: 80px;
-  padding: 20px;
+nav {
   width: 100%;
-  position: relative;
+  height: 75px;
   background-color: var(--primary-color);
 }
 
-header form {
-  width: 100%;
+.navbar {
   height: 100%;
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar form {
+  display: flex;
+}
+
+.navbar form input {
+  color: black;
+  margin-right: 10px;
 }
 
 /* Classes */
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #7f8c8d;
+  border: none;
+  border-radius: 15px;
+  text-transform: uppercase;
+  background-color: var(--secondary-color);
+}
 
 .movie-search {
   width: 300px;
@@ -48,10 +75,6 @@ header form {
   background-color: var(--secondary-color);
 }
 
-.movie-search::placeholder {
-  color: white;
-}
-
 .loading {
   text-align: center;
   margin-top: 300px;
@@ -59,7 +82,7 @@ header form {
 }
 
 .posters {
-  padding: 30px 50px;
+  padding-top: 30px;
 }
 
 .movie-list {
@@ -68,4 +91,41 @@ header form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+/* MoviePage CSS */
+
+.movie-page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.backdrop {
+  position: absolute;
+  background-image: cover;
+  z-index: 1;
+}
+
+.backdrop img {
+  width: 100%;
+  height: calc(100% - 75px);
+}
+
+.backdrop-overlay {
+  position: relative;
+  display: block;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.movie-page-data {
+  position: absolute;
+  color: white;
+  z-index: 2;
 }

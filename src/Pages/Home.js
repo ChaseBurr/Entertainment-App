@@ -10,7 +10,7 @@ function Home() {
   useEffect(() => {
     let search = "Iron man";
     let API_KEY = "c52a1f0a294a2c11d901d69ed73d1290";
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${search}&page=1&include_adult=false`;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${search}&page=1&include_adult=true`;
 
     axios
       .get(url)

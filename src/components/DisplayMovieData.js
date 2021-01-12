@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function DisplayMovieData({ movieData }) {
   return (
-    <div className="posters">
+    <div className="posters container">
       {movieData ? (
         <ul className="movie-list">
           {movieData.map((movie) => {
@@ -12,6 +12,7 @@ function DisplayMovieData({ movieData }) {
               return (
                 <Link
                   className="poster"
+                  key={movie.id}
                   to={{
                     pathname: `/movies/${movie.id}`,
                     state: movie.id,
