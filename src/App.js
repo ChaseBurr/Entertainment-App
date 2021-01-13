@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <div className="navbar container">
+        <div className="navbar">
           <div className="logo">
             <a href="/">ENTERTAINMENT FINDER</a>
           </div>

@@ -22,7 +22,7 @@ function MoviePage({ match }) {
     <div className="movie-page">
       {movieData ? (
         <>
-          <div className="backdrop">
+          <div className="backdrop backdrop-img">
             {movieData.backdrop_path ? (
               <>
                 <img
@@ -50,6 +50,7 @@ function MoviePage({ match }) {
               <div className="movie-page-overview">
                 <h2>Overview</h2>
                 <p>{movieData.overview}</p>
+                <h4>Runtime: {movieData.runtime} minutes</h4>
               </div>
             </div>
           </div>
