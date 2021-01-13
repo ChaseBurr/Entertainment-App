@@ -117,7 +117,7 @@ form input:focus {
 
 .backdrop-img {
   width: 100%;
-  height: 938px;
+  height: 100%;
 }
 
 .backdrop-overlay {
@@ -135,7 +135,10 @@ form input:focus {
 .movie-page-data {
   position: absolute;
   color: white;
-  padding: 80px 0px 0px 80px;
+  /* padding: 80px 0px 0px 80px; */
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 150px;
   z-index: 2;
   display: flex;
 }
@@ -153,6 +156,7 @@ form input:focus {
 
 .movie-page-title {
   font-size: 3rem;
+  letter-spacing: 2px;
 }
 
 .movie-page-overview {
@@ -160,10 +164,29 @@ form input:focus {
 }
 .movie-page-overview h2 {
   font-size: 1.8rem;
+  letter-spacing: 1px;
   margin-bottom: 3px;
+}
+
+.movie-page-overview h4 {
+  margin-top: 20px;
 }
 
 .movie-page-overview p {
   font-size: 1.1rem;
   width: 800px;
+}
+
+.back-arrow {
+  color: white;
+  position: absolute;
+  z-index: 10;
+  font-size: 1.4rem;
+  margin-top: 40px;
+  margin-left: 150px;
+  text-decoration: none;
+}
+
+.back-arrow i {
+  margin-right: 10px;
 }
