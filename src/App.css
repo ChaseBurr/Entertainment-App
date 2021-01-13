@@ -53,6 +53,10 @@ nav {
   margin-right: 10px;
 }
 
+form input:focus {
+  outline: none;
+}
+
 /* Classes */
 
 .container {
