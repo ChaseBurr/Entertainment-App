@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Entertainment-App/static/css/main.77c4ce35.chunk.css",
-    "main.js": "/Entertainment-App/static/js/main.68b6a9c9.chunk.js",
-    "main.js.map": "/Entertainment-App/static/js/main.68b6a9c9.chunk.js.map",
+    "main.js": "/Entertainment-App/static/js/main.9948184f.chunk.js",
+    "main.js.map": "/Entertainment-App/static/js/main.9948184f.chunk.js.map",
     "runtime-main.js": "/Entertainment-App/static/js/runtime-main.40e99c12.js",
     "runtime-main.js.map": "/Entertainment-App/static/js/runtime-main.40e99c12.js.map",
     "static/js/2.a0315417.chunk.js": "/Entertainment-App/static/js/2.a0315417.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.40e99c12.js",
     "static/js/2.a0315417.chunk.js",
     "static/css/main.77c4ce35.chunk.css",
-    "static/js/main.68b6a9c9.chunk.js"
+    "static/js/main.9948184f.chunk.js"
   ]
 }
