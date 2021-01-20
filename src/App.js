@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 // Components
 
@@ -15,8 +15,7 @@ function App() {
       <div className="App">
          <Router>
             <Switch>
-               {/* <Route exact path="/" component={Home} /> */}
-               <Route exact path="/Entertainment-App/" component={Home} />
+               <Route exact path="/" component={Home} />
                <Route exact path="/movies" component={Movies} />
                <Route exact path="/movies/:id" component={MoviePage} />
                <Route exact path="/?search" component={MoviePage} />
