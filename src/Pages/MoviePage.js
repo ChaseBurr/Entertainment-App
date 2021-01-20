@@ -15,8 +15,6 @@ function MoviePage({ match }) {
          .catch((error) => console.log(error));
    }, []);
 
-   const defaultPath = "/Entertainment-App/#/";
-
    return (
       <div className="movie-page">
          {movieData ? (

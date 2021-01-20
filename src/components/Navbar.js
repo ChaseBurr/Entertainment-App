@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, HashRouter as Rotuer, Router } from "react-router-dom";
 
 // Components
 import Search from "./Search.js";

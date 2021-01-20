@@ -6,27 +6,33 @@ import Navbar from "./../components/Navbar";
 require("dotenv").config({ path: "/../" });
 
 function Home() {
-  const [movieData, setMovieData] = useState([]);
-  useEffect(() => {
-    async function fetchData() {
-      setMovieData(
-        await getPopular().then((response) => response.data.results)
-      );
-    }
-    fetchData();
-  }, []);
+   const [movieData, setMovieData] = useState([]);
+   const [numPages, setNumPages] = useState([]);
+   useEffect(() => {
+      async function fetchData() {
+         setMovieData(
+            await getPopular().then((response) => response.data.results)
+         );
+      }
+      fetchData();
+   }, []);
 
-  const getSearchData = (data) => {
-    setMovieData(data);
-    console.log("new data: ", data);
-  };
+   const getSearchData = (data) => {
+      setMovieData(data);
+      setNumPages(data);
+      console.log(numPages);
+   };
 
-  return (
-    <>
-      <Navbar searchData={getSearchData} />
-      <DisplayMovieData data={movieData} />
-    </>
-  );
+   return (
+      <>
+         <Navbar searchData={getSearchData} />
+         <DisplayMovieData data={movieData} />
+         <div className="page-buttons">
+            <button className="btn">Previous</button>
+            <button className="btn">Next</button>
+         </div>
+      </>
+   );
 }
 
 export default Home;

@@ -36,6 +36,7 @@ nav {
 
 .logo {
    font-size: 2rem;
+   color: white;
    letter-spacing: 2px;
 }
 
@@ -258,4 +259,20 @@ form input:focus {
    .searchForm .btn {
       display: none;
    }
+}
+
+.page-buttons {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   margin-bottom: 10px;
+}
+
+.page-buttons button {
+   background-color: var(--primary-color);
+   color: white;
+}
+
+.page-buttons button:not(:last-child) {
+   margin-right: 10px;
 }
