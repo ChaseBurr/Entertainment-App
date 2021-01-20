@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, HashRouter as Rotuer, Router } from "react-router-dom";
 
 // Components
 import Search from "./Search.js";
@@ -13,7 +13,7 @@ function Navbar(props) {
          <nav>
             <div className="navbar">
                <div className="logo">
-                  <Link to="/">ENTERTAINMENT FINDER</Link>
+                  <div to="/">ENTERTAINMENT FINDER</div>
                </div>
                <Search newData={updateData} />
             </div>
