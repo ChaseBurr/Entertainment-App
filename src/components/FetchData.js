@@ -3,7 +3,7 @@ import axios from "axios";
 let API_KEY = process.env.REACT_APP_API_KEY;
 
 export const getData = (query, type) => {
-   const url = `https://api.themoviedb.org/3/search/${type}/?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`;
+   const url = `https://api.themoviedb.org/3/search/${type}?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`;
    return axios.get(url);
 };
 
