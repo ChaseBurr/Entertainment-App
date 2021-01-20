@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Entertainment-App/static/css/main.67ae337c.chunk.css",
+    "main.css": "/Entertainment-App/static/css/main.9038a966.chunk.css",
     "main.js": "/Entertainment-App/static/js/main.2353e41e.chunk.js",
     "main.js.map": "/Entertainment-App/static/js/main.2353e41e.chunk.js.map",
     "runtime-main.js": "/Entertainment-App/static/js/runtime-main.40e99c12.js",
@@ -10,13 +10,13 @@
     "static/js/3.462b2e53.chunk.js": "/Entertainment-App/static/js/3.462b2e53.chunk.js",
     "static/js/3.462b2e53.chunk.js.map": "/Entertainment-App/static/js/3.462b2e53.chunk.js.map",
     "index.html": "/Entertainment-App/index.html",
-    "static/css/main.67ae337c.chunk.css.map": "/Entertainment-App/static/css/main.67ae337c.chunk.css.map",
+    "static/css/main.9038a966.chunk.css.map": "/Entertainment-App/static/css/main.9038a966.chunk.css.map",
     "static/js/2.057be2b5.chunk.js.LICENSE.txt": "/Entertainment-App/static/js/2.057be2b5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.40e99c12.js",
     "static/js/2.057be2b5.chunk.js",
-    "static/css/main.67ae337c.chunk.css",
+    "static/css/main.9038a966.chunk.css",
     "static/js/main.2353e41e.chunk.js"
   ]
 }
