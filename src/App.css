@@ -75,6 +75,14 @@ form input:focus {
    background-color: var(--secondary-color);
 }
 
+.searchForm input {
+   width: 300px;
+}
+
+.searchForm .btn {
+   margin-left: -60px;
+}
+
 .movie-search {
    width: 300px;
    padding: 10px;
