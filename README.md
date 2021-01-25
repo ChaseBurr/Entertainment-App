@@ -1,6 +1,6 @@
-# Entertainment App
+<h1>Entertainment App</h1>
 
-This project is to demonstrate my ability to get data from an API and display it with multiple React components.
+<p>This project use's TheMovieDB's API to grab the data. While using React Components I display the data based off the given data.</p>
 
-<h2>View the page live!</h2>
+<h3>View the project live!</h3>
 <p>Click this <a href="https://chaseburr.github.io/Entertainment-App/#/">Link</a> to vew the project live on Github Pages.</p>
