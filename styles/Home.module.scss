@@ -1,0 +1,26 @@
+.footer {
+     width: 100%;
+     background-color: #6c5ce7;
+     padding: 0.5rem;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+
+     button {
+          outline: none;
+          border: none;
+          margin-right: 10px;
+          padding: 5px 10px;
+          text-transform: uppercase;
+          background-color: white;
+          border-radius: 5px;
+          cursor: pointer;
+     }
+
+     p {
+          margin-right: 10px;
+          color: white;
+          font-size: 1.2rem;
+     }
+}
