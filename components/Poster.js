@@ -1,5 +1,6 @@
 import styles from "./../styles/Poster.module.scss";
 import Link from "next/link";
+import React from "react";
 
 export default function Poster({ path, title, desc, movieId }) {
      return (
