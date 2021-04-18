@@ -16,6 +16,6 @@ export const getDataById = async (id, type = "movie") => {
      return await fetch(url);
 };
 
-export const getPoster = (posterId) => {
+export const getImage = (posterId) => {
      return `https://image.tmdb.org/t/p/original${posterId}`;
 };

@@ -1,19 +1,14 @@
 import styles from "./../styles/Poster.module.scss";
-import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
+import { getImage } from "../TheMovieDB";
 
-export default function Poster({ path, title, desc, movieId }) {
+export default function Poster({ data }) {
      return (
-          <Link href={`/movie/${movieId}`}>
+          <motion.div whileHover={{ rotate: 1, scale: 1.05 }}>
                <div className={styles.poster}>
-                    <div className={styles.backdrop}>
-                         <img src={path} alt={title} />
-                    </div>
-                    <div className={styles.poster_data}>
-                         <h1>{title}</h1>
-                         <h3>{desc}</h3>
-                    </div>
+                    <img src={getImage(data.poster_path)} alt="" />
                </div>
-          </Link>
+          </motion.div>
      );
 }

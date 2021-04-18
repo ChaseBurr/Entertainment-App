@@ -1,0 +1,11 @@
+// iPad Vertical
+@media (min-width: 768px) {
+     .poster_grid {
+          grid-template-areas: "poster poster poster";
+     }
+
+     .poster {
+          width: 250px;
+          height: 400px;
+     }
+}

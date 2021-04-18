@@ -5,5 +5,24 @@
      margin: 0;
      box-sizing: border-box;
      font-family: Poppins, sans-serif;
-     overflow-x: hidden;
+}
+
+:root {
+     --primary-color: #192a56;
+}
+
+body {
+     background-color: var(--primary-color);
+     background: url("./../assets/img/background.png");
+     background-size: cover;
+     background-repeat: no-repeat;
+}
+
+.overlay {
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     position: absolute;
+     background-color: hsla(0, 0%, 0%, 0.452);
 }

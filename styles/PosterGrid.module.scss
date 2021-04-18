@@ -1,4 +1,4 @@
 .posters {
-     display: flex;
-     flex-wrap: wrap;
+     display: grid;
+     grid-template-areas: "poster poster poster poster";
 }
