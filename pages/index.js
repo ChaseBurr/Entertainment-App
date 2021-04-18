@@ -23,10 +23,27 @@ export default function Home({ data, maxPages }) {
           setTotalPages(maxPages);
      }, []);
 
+     function previousPage() {
+          setCurrentPage(currentPage - 1);
+          getPage(currentPage - 1);
+     }
+
+     function nextPage() {
+          setCurrentPage(currentPage + 1);
+          getPage(currentPage + 1);
+     }
+
+     async function getPage(page) {
+          const response = await getPopular(page);
+          const data = await response.json();
+          setShows(data);
+          window.scrollTo(0, 0);
+     }
+
      return (
           <>
                <Head>
-                    <title>Entertainment Finder</title>
+                    <title>Entertainment</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
 
@@ -63,7 +80,12 @@ export default function Home({ data, maxPages }) {
                     )}
                </main>
 
-               <Footer pageNumber={currentPage} maxPages={totalPages} />
+               <Footer
+                    pageNumber={currentPage}
+                    maxPages={totalPages}
+                    previousPage={previousPage}
+                    nextPage={nextPage}
+               />
           </>
      );
 }
