@@ -1,4 +1,4 @@
-import { getDataById, getPoster } from "./../../fetch";
+import { getDataById, getImage } from "./../../TheMovieDB";
 import styles from "./../../styles/MoviePage.module.scss";
 
 export default function movie({ data }) {
@@ -10,12 +10,12 @@ export default function movie({ data }) {
                               <i>←</i> Go Back
                          </a>
                          <div className={styles.movie_backdrop}>
-                              <img src={getPoster(data.backdrop_path)} alt="" />
+                              <img src={getImage(data.backdrop_path)} alt="" />
                               <div className={styles.overlay} />
                          </div>
                          <div className={styles.movie_content}>
                               <img
-                                   src={getPoster(data.poster_path)}
+                                   src={getImage(data.poster_path)}
                                    alt={data.title}
                                    className={styles.movie_poster}
                               />
