@@ -1,4 +1,5 @@
 .posters {
      display: grid;
-     grid-template-areas: "poster poster poster poster";
+     grid-template-columns: repeat(4, 25%);
+     justify-items: center;
 }

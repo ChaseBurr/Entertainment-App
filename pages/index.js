@@ -43,7 +43,7 @@ export default function Home({ data, maxPages }) {
      return (
           <>
                <Head>
-                    <title>Entertainment</title>
+                    <title>Entertainment Finder</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
 
