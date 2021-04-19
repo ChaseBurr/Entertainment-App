@@ -5,7 +5,15 @@ const about = () => {
      return (
           <div>
                <Navbar />
-               <p style={{ color: "white" }}>More to come</p>
+               <p
+                    style={{
+                         color: "white",
+                         fontSize: "2rem",
+                         textAlign: "center",
+                    }}
+               >
+                    coming soon
+               </p>
           </div>
      );
 };

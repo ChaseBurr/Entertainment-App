@@ -6,8 +6,8 @@ export const getData = async (query, type = "movie", page = 1) => {
      return fetch(url);
 };
 
-export const getPopular = async (page = 1) => {
-     const url = `https://api.themoviedb.org/${API_VERSION}/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}&include_adult=false`;
+export const getPopular = async (page = 1, type = "movie") => {
+     const url = `https://api.themoviedb.org/${API_VERSION}/${type}/popular?api_key=${API_KEY}&language=en-US&page=${page}&include_adult=true`;
      return await fetch(url);
 };
 

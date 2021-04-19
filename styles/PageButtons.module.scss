@@ -1,0 +1,29 @@
+.pageButtons {
+     width: 100%;
+     padding: 20px;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+
+     button {
+          outline: none;
+          border: none;
+          margin-right: 10px;
+          padding: 5px 15px;
+          text-transform: uppercase;
+          background-color: white;
+          border-radius: 5px;
+          cursor: pointer;
+
+          &:disabled {
+               cursor: not-allowed;
+          }
+     }
+
+     p {
+          margin-right: 10px;
+          color: white;
+          font-size: 1.2rem;
+     }
+}

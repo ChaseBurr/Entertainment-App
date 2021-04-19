@@ -1,19 +1,16 @@
 import React from "react";
 
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
 import { getPopular } from "./../TheMovieDB";
 import Navbar from "./../components/Navbar";
-import styles from "../styles/Home.module.scss";
-import PosterGrid from "../components/PosterGrid";
-import { Container } from "./../components/Elements";
-import Footer from "../components/Footer";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import Poster from "./../components/Poster";
+import DisplayShows from "../components/DisplayShows";
+import PageButtons from "../components/PageButtons";
 
-export default function Home({ data, maxPages }) {
+export default function Home({ data, maxPages, page }) {
+     const Router = useRouter();
      const [shows, setShows] = useState(null);
      const [totalPages, setTotalPages] = useState(1);
      const [currentPage, setCurrentPage] = useState(1);
@@ -21,6 +18,7 @@ export default function Home({ data, maxPages }) {
      useEffect(() => {
           setShows(data);
           setTotalPages(maxPages);
+          setCurrentPage(parseInt(page));
      }, []);
 
      function previousPage() {
@@ -38,6 +36,18 @@ export default function Home({ data, maxPages }) {
           const data = await response.json();
           setShows(data);
           window.scrollTo(0, 0);
+          updateURL(page);
+     }
+
+     function updateURL(page) {
+          Router.push(
+               {
+                    pathname: `/`,
+                    query: { page },
+               },
+               undefined,
+               { shallow: true }
+          );
      }
 
      return (
@@ -50,37 +60,10 @@ export default function Home({ data, maxPages }) {
                <main>
                     <Navbar />
 
-                    {shows && (
-                         <Container>
-                              <PosterGrid>
-                                   {shows.results.map((show, i) => (
-                                        <Link href={`/show/${show.id}`} key={i}>
-                                             <motion.div
-                                                  initial={{ y: 300 }}
-                                                  animate={{ y: 0 }}
-                                                  transition={{
-                                                       duration: 0.5 + i * 0.2,
-                                                  }}
-                                             >
-                                                  <motion.div
-                                                       whileHover={{
-                                                            scale: 1.05,
-                                                       }}
-                                                       whileTap={{
-                                                            scale: 1.03,
-                                                       }}
-                                                  >
-                                                       <Poster data={show} />
-                                                  </motion.div>
-                                             </motion.div>
-                                        </Link>
-                                   ))}
-                              </PosterGrid>
-                         </Container>
-                    )}
+                    <DisplayShows shows={shows} />
                </main>
 
-               <Footer
+               <PageButtons
                     pageNumber={currentPage}
                     maxPages={totalPages}
                     previousPage={previousPage}
@@ -93,9 +76,13 @@ export default function Home({ data, maxPages }) {
 export const getServerSideProps = async (ctx) => {
      let data = null;
      let maxPages = 1;
+     let page = ctx.query.page;
 
      try {
-          const response = await getPopular();
+          if (!page) {
+               page = 1;
+          }
+          const response = await getPopular(page);
           data = await response.json();
           maxPages = data.total_pages;
      } catch (error) {
@@ -106,6 +93,7 @@ export const getServerSideProps = async (ctx) => {
           props: {
                data,
                maxPages: maxPages,
+               page,
           },
      };
 };

@@ -13,6 +13,10 @@ export default function Navbar() {
                     </li>
                     <p className={styles.divider}>|</p>
                     <li>
+                         <Link href="/tv">TV Shows</Link>
+                    </li>
+                    <p className={styles.divider}>|</p>
+                    <li>
                          <Link href="/about">about</Link>
                     </li>
                     <p className={styles.divider}>|</p>
