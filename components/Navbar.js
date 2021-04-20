@@ -15,10 +15,10 @@ export default function Navbar() {
                     <li>
                          <Link href="/tv">TV Shows</Link>
                     </li>
-                    <p className={styles.divider}>|</p>
+                    {/* <p className={styles.divider}>|</p>
                     <li>
                          <Link href="/about">about</Link>
-                    </li>
+                    </li> */}
                     <p className={styles.divider}>|</p>
                     <li>
                          <Link href="/categories">categories</Link>

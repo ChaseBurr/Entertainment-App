@@ -19,3 +19,8 @@ export const getDataById = async (id, type = "movie") => {
 export const getImage = (posterId) => {
      return `https://image.tmdb.org/t/p/original${posterId}`;
 };
+
+export const getGenre = (id, type = "movie", page = 1) => {
+     const url = `https://api.themoviedb.org/${API_VERSION}/discover/${type}?api_key=${API_KEY}&with_genres=${id}&page=${page}&include_adult=true`;
+     return fetch(url);
+};

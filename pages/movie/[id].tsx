@@ -1,5 +1,5 @@
 import styles from "./../../styles/ShowPage.module.scss";
-
+import Link from "next/link";
 import { getDataById, getImage } from "../../TheMovieDB";
 import { Container } from "../../components/Elements";
 import { motion } from "framer-motion";
@@ -70,7 +70,7 @@ const ShowMovie: React.FC<Props> = ({ data }) => {
                               animate={{ x: 0 }}
                               className={styles.show_details}
                          >
-                              <h1>{data.name}</h1>
+                              <h1>{data.title}</h1>
                               <hr />
 
                               <h2>Overview</h2>
@@ -85,14 +85,7 @@ const ShowMovie: React.FC<Props> = ({ data }) => {
                                    {data.release_date}
                               </p>
 
-                              <h4 style={{ marginTop: "10px" }}>Genres</h4>
-                              <div className={styles.genres}>
-                                   {data.genres.map((genre, i) => (
-                                        <p key={i} className={styles.genre}>
-                                             {genre.name}
-                                        </p>
-                                   ))}
-                              </div>
+                              <DisplayGenres genres={data.genres} />
 
                               <h4 style={{ marginTop: "10px" }}>View on</h4>
                               <div className={styles.view_on}>
@@ -113,6 +106,21 @@ const ShowMovie: React.FC<Props> = ({ data }) => {
      );
 };
 
+function DisplayGenres({ genres }) {
+     return (
+          <>
+               <h4 style={{ marginTop: "10px" }}>Genres</h4>
+               <div className={styles.genres}>
+                    {genres.map((genre, i) => (
+                         <Link href={`/genre/${genre.id}`} key={i}>
+                              <p className={styles.genre}>{genre.name}</p>
+                         </Link>
+                    ))}
+               </div>
+          </>
+     );
+}
+
 export default ShowMovie;
 
 export const getServerSideProps = async (ctx) => {
@@ -122,10 +130,10 @@ export const getServerSideProps = async (ctx) => {
      try {
           const response = await getDataById(id, "movie");
           data = await response.json();
-          console.log(data);
      } catch (error) {
           console.log(error);
      }
+     console.log(data);
 
      return {
           props: {

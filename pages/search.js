@@ -10,6 +10,7 @@ import { Container } from "./../components/Elements";
 
 import { getData } from "./../TheMovieDB";
 import Footer from "../components/Footer";
+import DisplayShows from "../components/DisplayShows";
 
 export default function search({
      data,
@@ -41,6 +42,7 @@ export default function search({
           if (searchValue) {
                if (searchValue.length > 0) {
                     let query = { query: searchValue };
+
                     if (currentPage != null) {
                          query.page = currentPage;
                     }
@@ -127,45 +129,18 @@ export default function search({
                     />
                     <div className={styles.search_bar_right}></div>
                </motion.div>
-
-               <Container style={{ paddingTop: "100px" }}>
-                    {shows && (
-                         <>
-                              <PosterGrid>
-                                   {shows.results.map((show, i) => (
-                                        <Link href={`/show/${show.id}`} key={i}>
-                                             <motion.div
-                                                  initial={{ y: 300 }}
-                                                  animate={{ y: 0 }}
-                                                  transition={{
-                                                       duration: i / 8 + 0.1,
-                                                  }}
-                                             >
-                                                  <motion.div
-                                                       whileHover={{
-                                                            scale: 1.05,
-                                                       }}
-                                                       whileTap={{
-                                                            scale: 1.03,
-                                                       }}
-                                                  >
-                                                       <Poster data={show} />
-                                                  </motion.div>
-                                             </motion.div>
-                                        </Link>
-                                   ))}
-                              </PosterGrid>
-                              {maxPages > 0 && (
-                                   <Footer
-                                        pageNumber={pageNumber}
-                                        maxPages={maxPages}
-                                        previousPage={previousPage}
-                                        nextPage={nextPage}
-                                   />
-                              )}
-                         </>
-                    )}
-               </Container>
+               {shows && (
+                    <>
+                         <DisplayShows shows={shows} type="movie" />
+                         <Footer
+                              pageNumber={pageNumber}
+                              maxPages={maxPages}
+                              previousPage={previousPage}
+                              nextPage={nextPage}
+                         />
+                    </>
+               )}
+               )
           </div>
      );
 }

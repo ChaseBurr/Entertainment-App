@@ -1,0 +1,30 @@
+.about_page {
+     text-align: center;
+
+     .header {
+          font-family: "Roboto", sans-serif;
+          font-size: 2.5rem;
+          letter-spacing: 3px;
+          color: purple;
+          text-transform: uppercase;
+     }
+
+     hr {
+          border: 1px solid white;
+          width: 400px;
+          margin: 0 auto;
+          margin-top: 5px;
+
+          &:last-child {
+               width: 150px;
+          }
+     }
+
+     .about {
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          padding: 30px;
+          color: white;
+          font-family: "Roboto", sans-serif;
+     }
+}
