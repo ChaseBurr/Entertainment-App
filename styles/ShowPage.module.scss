@@ -74,18 +74,54 @@
 
                .genres {
                     display: flex;
-                    margin-top: 5px;
+                    flex-wrap: wrap;
 
                     .genre {
                          background-color: rgb(112, 112, 112);
                          border-radius: 10px;
                          padding: 2px 10px;
                          margin-right: 10px;
+                         font-size: 0.6rem;
+                         cursor: pointer;
 
                          &:last-child {
                               margin-right: 0px;
                          }
                     }
+               }
+          }
+     }
+}
+
+.seasons {
+     display: grid;
+     grid-template-areas: "season season season season season season";
+     margin-top: 10px;
+
+     .season {
+          position: relative;
+          width: 170px;
+          height: 250px;
+          display: flex;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          border-radius: 5px;
+
+          &:last-child {
+               margin-right: 0px;
+          }
+
+          img {
+               width: 1000%;
+               height: 100%;
+          }
+
+          .season_content {
+               color: black;
+               padding: 10px 20px;
+               overflow: hidden;
+               p {
+                    font-size: 0.7rem;
                }
           }
      }

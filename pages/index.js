@@ -60,7 +60,7 @@ export default function Home({ data, maxPages, page }) {
                <main>
                     <Navbar />
 
-                    <DisplayShows shows={shows} />
+                    <DisplayShows shows={shows} type="movie" />
                </main>
 
                <PageButtons

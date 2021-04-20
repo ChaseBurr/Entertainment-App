@@ -6,7 +6,14 @@ import PosterGrid from "./PosterGrid";
 import { motion } from "framer-motion";
 import { Container } from "./Elements";
 
-export default function DisplayShows({ shows, type }) {
+interface Props {
+     shows: {
+          results: [{ id: number }];
+     };
+     type: string;
+}
+
+const DisplayShows: React.FC<Props> = ({ shows, type }) => {
      return (
           <div>
                {shows && (
@@ -39,4 +46,6 @@ export default function DisplayShows({ shows, type }) {
                )}
           </div>
      );
-}
+};
+
+export default DisplayShows;
